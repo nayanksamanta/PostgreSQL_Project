@@ -461,3 +461,23 @@ CREATE EXTENSION pg_trgm;
 ```sql
 CREATE INDEX idx_film_title_trgm ON film USING GIST (title gist_trgm_ops);
 ```
+
+
+# Key Findings
+### After executing the 30-step analysis, several critical business patterns emerged:
+
+ Content Popularity: The library's "Action" and "Animation" categories consistently drive the highest rental volumes, while premium-tier films ($4.99) account for the majority of total revenue despite being a smaller portion of the inventory.
+ Customer Loyalty: A core segment of "Power Users" (those renting 20+ films) represents a significant percentage of recurring revenue, suggesting that a loyalty program could further increase retention.
+ Operational Bottlenecks: Analysis of return dates revealed that a measurable percentage of films are returned late, highlighting a clear opportunity for revenue recovery through automated late-fee logging.
+ Market Concentration: Customer data is geographically diverse, but revenue is concentrated in specific urban hubs, suggesting targeted marketing locations for future physical kiosks or stores.
+
+# Reports Generated
+### The project produces the following business-ready reports:
+
+ Top 10 Performance Report: A list of the most rented films and their total contribution to store earnings.
+ Inventory Health Audit: A breakdown of film counts by category and rating to identify gaps in the collection.
+ Monthly/Yearly Revenue Statements: Comparative financial data partitioned by year to track growth trends.
+ Staff Performance Log: A summary of transactions handled by each staff member for productivity tracking.
+
+# Conclusion
+This project successfully demonstrates the power of PostgreSQL in managing a complex, interconnected retail ecosystem. By transforming raw transactional data into structured reports, we provided deep insights into inventory lifecycle and customer habits. The implementation of indexes and automated triggers ensures that the database remains not only a repository of information but a high-performance tool capable of scaling with business needs. This suite of queries serves as a robust framework for any subscription or rental-based business model.
